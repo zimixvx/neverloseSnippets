@@ -1,0 +1,20 @@
+{
+  "name": "neverlose-code-snippets",
+  "displayName": "neverlose-code-snippets",
+  "description": "snippets",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
