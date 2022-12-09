@@ -1560,179 +1560,235 @@
             "item:parent()"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.console_exec":{
+        "prefix":"utils.console_exec",
+        "description": "Executes a console command. Multiple commands can be combined with ';'. Be careful when passing user input (including usernames) to it.",
         "body":[
-            ""
+            "utils.console_exec(${1:cmd})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.execute_after":{
+        "prefix":"utils.execute_after",
+        "description": "Executes the callback after delay seconds, passing the arguments to it.",
         "body":[
-            ""
+            "utils.execute_after(${1:delay},${2:callback})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.net_channel":{
+        "prefix":"utils.net_channel",
+        "description": "Returns the NetChannel struct.",
         "body":[
-            ""
+            "utils.net_channel()"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.trace_line":{
+        "prefix":"utils.trace_line",
+        "description": "Returns a trace struct containing all the information.",
         "body":[
-            ""
+            "utils.trace_line(${1:from},${2:to}, ${3:skip},${4:mask}, ${5:type})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.trace_hull":{
+        "prefix":"utils.trace_hull",
+        "description": "Returns a trace struct containing all the information.",
         "body":[
-            ""
+            "utils.trace_hull(${1:from},${2:to},${3:mins},${4:maxs},${3:skip},${4:mask},${5:type)"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.trace_bullet":{
+        "prefix":"utils.trace_bullet",
+        "description": "Returns the damage, trace arguments.",
         "body":[
-            ""
+            "utils.trace_bullet(${1:from_entity},${2:from},${3:to}, ${4:skip})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.opcode_scan":{
+        "prefix":"utils.opcode_scan",
+        "description": "Returns a pointer to the specified pattern if it was found. Otherwise returns nil.",
         "body":[
-            ""
+            "utils.opcode_scan(${1:module},${2:signature},${3:offset})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.create_interface":{
+        "prefix":"utils.create_interface",
+        "description": "Returns a pointer to the specified interface if it was found. Otherwise returns nil.",
         "body":[
-            ""
+            "utils.create_interface(${1:module}, ${2:interface})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.get_netvar_offset":{
+        "prefix":"utils.get_netvar_offset",
+        "description": "Returns the offset of the specified prop. Can be used to manually navigate to the net prop.",
         "body":[
-            ""
+            "utils.get_netvar_offset(${1:table},${2:prop})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.get_vfunc":{
+        "prefix":"utils.get_vfunc",
+        "description": "Creates and returns a wrapper function that calls a virtual table function from the specified interface on the specified index.",
         "body":[
-            ""
+            "utils.get_vfunc(${1:module}, ${2:interface},${3:index},${4:...})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.random_int":{
+        "prefix":"utils.random_int",
+        "description": "Returns a random integer value.",
         "body":[
-            ""
+            "utils.random_int(${1:min},${2:max})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.random_float":{
+        "prefix":"utils.random_float",
+        "description": "Returns a random float value.",
         "body":[
-            ""
+            "utils.random_float(${1:min},${2:max})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "utils.random_seed":{
+        "prefix":"utils.random_seed",
+        "description": "Sets the new random seed.",
         "body":[
-            ""
+            "utils.random_seed(${1:seed})"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.time":{
+        "prefix":"net.time",
+        "description": "Current network time.",
         "body":[
-            ""
+            "net.time"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.time_connected":{
+        "prefix":"net.time_connected",
+        "description": "Connection time in seconds.",
         "body":[
-            ""
+            "net.time_connected"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.time_since_last_received":{
+        "prefix":"net.time_since_last_received",
+        "description": "Time since last received packet in seconds.",
         "body":[
-            ""
+            "net.time_since_last_received"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.is_loopback":{
+        "prefix":"net.is_loopback",
+        "description": "Returns true if server is a loopback (local server).",
         "body":[
-            ""
+            "net.is_loopback"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.is_playback":{
+        "prefix":"net.is_playback",
+        "description": "Returns true if demo is being played.",
         "body":[
-            ""
+            "net.is_playback"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.is_timing_out":{
+        "prefix":"net.is_timing_out",
+        "description": "Returns true if client is timing out.",
         "body":[
-            ""
+            "net.is_timing_out"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.sequence_nr":{
+        "prefix":"net.sequence_nr",
+        "description": "Last sent sequence number.",
         "body":[
-            ""
+            "net.sequence_nr[$1{number}]"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.latency":{
+        "prefix":"net.latency",
+        "description": "Current latency (RTT), more accurate but jittering.",
         "body":[
-            ""
+            "net.latency[$1{number}]"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.avg_latency":{
+        "prefix":"net.avg_latency",
+        "description": "net.avg_latency",
         "body":[
-            ""
+            "net.avg_latency[$1{number}]"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.loss":{
+        "prefix":"net.loss",
+        "description": "Percentage in the range [0.0, 1.0] of the current packet loss.",
         "body":[
-            ""
+            "net.loss[$1{number}]"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.choke":{
+        "prefix":"net.choke",
+        "description": "Percentage in the range [0.0, 1.0] of the current packet choke.",
         "body":[
-            ""
+            "net.choke[$1{number}]"
         ]
     },
-    "":{
-        "prefix":"",
-        "description": "",
+    "net.packets":{
+        "prefix":"net.packets",
+        "description": "Average amount of packets/sec.",
         "body":[
-            ""
+            "net.packets[$1{number}]"
+        ]
+    },
+    "net.data":{
+        "prefix":"net.data",
+        "description": "Data flow in bytes/sec.",
+        "body":[
+            "net.data[$1{number}]"
+        ]
+    },
+    "net.total_packets":{
+        "prefix":"net.total_packets",
+        "description": "Total amount of packets/sec.",
+        "body":[
+            "net.total_packets[$1{number}]"
+        ]
+    },
+    "net.total_data":{
+        "prefix":"net.total_data",
+        "description": "Total data flow in bytes/sec",
+        "body":[
+            "net.total_data[$1{number}]"
+        ]
+    },
+    "net:get_server_info":{
+        "prefix":"net:get_server_info",
+        "description": "Returns a table containing rate, name, address, frame_time, and deviation (or nil on failure).",
+        "body":[
+            "net:get_server_info()"
+        ]
+    },
+    "net:is_valid_packet":{
+        "prefix":"net:is_valid_packet",
+        "description": "Returns true if the packet is valid.",
+        "body":[
+            "net:is_valid_packet(${1:flow},${2:frame})"
+        ]
+    },
+    "net:get_packet_time":{
+        "prefix":"net:get_packet_time",
+        "description": "Returns the time when the packet was sent.",
+        "body":[
+            "net:get_packet_time(${1:flow},${2:frame})"
+        ]
+    },
+    "net:get_packet_bytes":{
+        "prefix":"net:get_packet_bytes",
+        "description": "Returns the group size of this packet.",
+        "body":[
+            "net:get_packet_bytes(${1:flow},${2:frame},${3:group})"
+        ]
+    },
+    "net:get_packet_response_latency":{
+        "prefix":"net:get_packet_response_latency",
+        "description": "Returns latency_msecs, choke of this packet.",
+        "body":[
+            "net:get_packet_response_latency(${1:flow}, ${2:frame})"
         ]
     }
 }
