@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # neverlosesnippets README
 
 This is the README for your extension "neverlosesnippets". After writing up a brief description, we recommend including the following sections.
@@ -63,3 +64,6 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+=======
+# neverlosesnippets
+>>>>>>> a861d240060bc79668b304c8d39f200d64043673
