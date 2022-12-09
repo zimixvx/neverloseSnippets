@@ -1,0 +1,1738 @@
+{
+    "bit.arshift": {
+        "prefix": "bit.arshift",
+        "description": "Returns the bitwise arithmetic right-shift of its first argument by the number of bits given by the second argument.\nArithmetic right-shift treats the most-significant bit as a sign bit and replicates it.\nOnly the lower 5 bits of the shift count are used (reduces to the range [0..31]).",
+        "body": [
+            "bit.arshift(${1:x}, ${2:n})"
+        ]
+    },
+    "bit.band": {
+        "prefix": "bit.band",
+        "description": "Returns the bitwise and of all of its arguments. Note that more than two arguments are allowed.",
+        "body": [
+            "bit.band(${1:x1}, ${2:x2}, ${3:...})"
+        ]
+    },
+    "bit.bnot": {
+        "prefix": "bit.bnot",
+        "description": "Returns the bitwise not of its argument.",
+        "body": [
+            "bit.bnot(${1:x})"
+        ]
+    },
+    "bit.bor": {
+        "prefix": "bit.bor",
+        "description": "Returns the bitwise or of all of its arguments. Note that more than two arguments are allowed.",
+        "body": [
+            "bit.bor(${1:x1}, ${2:x2}, ${3:...})"
+        ]
+    },
+    "bit.bswap": {
+        "prefix": "bit.bswap",
+        "description": "Swaps the bytes of its argument and returns it. This can be used to convert little-endian 32 bit numbers to big-endian 32 bit numbers or vice versa.",
+        "body": [
+            "bit.bswap(${1:x})"
+        ]
+    },
+    "bit.bxor": {
+        "prefix": "bit.bxor",
+        "description": "Returns the bitwise xor of all of its arguments. Note that more than two arguments are allowed.",
+        "body": [
+            "bit.bxor(${1:x1}, ${2:[x2...]})"
+        ]
+    },
+    "bit.lshift": {
+        "prefix": "bit.lshift",
+        "description": "Returns the bitwise logical left-shift of its first argument by the number of bits given by the second argument.\nLogical shifts treat the first argument as an unsigned number and shift in 0-bits.\nOnly the lower 5 bits of the shift count are used (reduces to the range [0..31]).",
+        "body": [
+            "bit.lshift(${1:x}, ${2:n})"
+        ]
+    },
+    "bit.rol": {
+        "prefix": "bit.rol",
+        "description": "Returns the bitwise left rotation of its first argument by the number of bits given by the second argument. Bits shifted out on one side are shifted back in on the other side.\nOnly the lower 5 bits of the rotate count are used (reduces to the range [0..31]).",
+        "body": [
+            "bit.rol(${1:x}, ${2:n})"
+        ]
+    },
+    "bit.ror": {
+        "prefix": "bit.ror",
+        "description": "Returns the bitwise right rotation of its first argument by the number of bits given by the second argument. Bits shifted out on one side are shifted back in on the other side.\nOnly the lower 5 bits of the rotate count are used (reduces to the range [0..31]).",
+        "body": [
+            "bit.ror(${1:x}, ${2:n})"
+        ]
+    },
+    "bit.rshift": {
+        "prefix": "bit.rshift",
+        "description": "Returns the bitwise logical right-shift of its first argument by the number of bits given by the second argument.\nLogical shifts treat the first argument as an unsigned number and shift in 0-bits.\nOnly the lower 5 bits of the shift count are used (reduces to the range [0..31]).",
+        "body": [
+            "bit.rshift(${1:x}, ${2:n})"
+        ]
+    },
+    "bit.tobit": {
+        "prefix": "bit.tobit",
+        "description": "Normalizes a number to the numeric range for bit operations and returns it. This function is usually not needed since all bit operations already normalize all of their input arguments.",
+        "body": [
+            "bit.tobit(${1:x})"
+        ]
+    },
+    "bit.tohex": {
+        "prefix": "bit.tohex",
+        "description": "Converts its first argument to a hex string. The number of hex digits is given by the absolute value of the optional second argument. Positive numbers between 1 and 8 generate lowercase hex digits. Negative numbers generate uppercase hex digits. Only the least-significant 4*|n| bits are used. The default is to generate 8 lowercase hex digits.",
+        "body": [
+            "bit.tohex(${1:x}, ${2:n})"
+        ]
+    },
+    "gcinfo":{
+        "prefix":"gcinfo",
+        "description": "Returns the current floored dynamic memory usage of Lua in kilobytes.",
+        "body":[
+            "gcinfo()"
+        ]
+    },
+    "print_chat":{
+        "prefix":"print_raw",
+        "description": "Prints the text to the in-game chat.",
+        "body":[
+            "print_chat(${1:text})"
+        ]
+    },
+    "print_raw":{
+        "prefix":"print_raw",
+        "description": "Prints the text that can be changed in color by prepending it with  followed by the color in the hexadecimal RRGGBB format. For example, aFF0000Hi will print Hi in red.",
+        "body":[
+            "print_raw(${1:text})"
+        ]
+    },
+    "print_dev":{
+        "prefix":"print_dev",
+        "description": "Prints the text into the upper-left console panel.",
+        "body":[
+            "print_dev(${1:text})"
+        ]
+    },
+    "color_object:clone":{
+        "prefix":"color_object:clone",
+        "description": "Creates and returns a copy of the color object.",
+        "body":[
+            "color_object:clone()"
+        ]
+    },
+    "color_object:init":{
+        "prefix":"color_object:init",
+        "description": "Overwrites the color's ranges. Returns itself.",
+        "body":[
+            "color_object:init(${1:r}, ${2:g}, ${3:b}, ${4:a})"
+        ]
+    },
+    "color_object:as_fraction":{
+        "prefix":"color_object:as_fraction",
+        "description": "Overwrites the color's ranges using the fraction values. Returns itself.",
+        "body":[
+            "color_object:as_fraction(${1:r}, ${2:g}, ${3:b}, ${4:a})"
+        ]
+    },
+    "color_object:as_hsv":{
+        "prefix":"color_object:as_hsv",
+        "description": "Overwrites the color's ranges converting the HSV to RGBA values. Returns itself.",
+        "body":[
+            "color_object:as_hsv(${1:r}, ${2:g}, ${3:b}, ${4:a})"
+        ]
+    },
+    "color_object:as_hsl":{
+        "prefix":"color_object:as_hsl",
+        "description": "Overwrites the color's ranges converting the HSL to RGBA values. Returns itself.",
+        "body":[
+            "color_object:as_hsl(${1:r}, ${2:g}, ${3:b}, ${4:a})"
+        ]
+    },
+    "color_object:to_fraction":{
+        "prefix":"color_object:to_fraction",
+        "description": "Returns the r, g, b, and a ranges of the color as a percentage in the range of [0.0, 1.0].",
+        "body":[
+            "color_object:to_fraction()"
+        ]
+    },
+    "color_object:to_hex":{
+        "prefix":"color_object:to_hex",
+        "description": "Returns the HEX string representing the color.",
+        "body":[
+            "color_object:to_hex()"
+        ]
+    },
+    "color_object:to_int32":{
+        "prefix":"color_object:to_int32",
+        "description": "Returns the int32 value representing the color.",
+        "body":[
+            "color_object:to_int32()"
+        ]
+    },
+    "color_object:to_hsv":{
+        "prefix":"color_object:to_hsv",
+        "description": "Returns the HSV representation of the color.",
+        "body":[
+            "color_object:to_hsv()"
+        ]
+    },
+    "color_object:to_hsl":{
+        "prefix":"color_object:to_hsl",
+        "description": "Returns the HSL representation of the color.",
+        "body":[
+            "color_object:to_hsl()"
+        ]
+    },
+    "color_object:lerp":{
+        "prefix":"color_object:lerp",
+        "description": "Returns the linearly interpolated color between two colors by the specified weight.",
+        "body":[
+            "color_object:lerp(${1:other}: color, ${2:weight}: number)"
+        ]
+    },
+    "color_object:grayscale":{
+        "prefix":"color_object:grayscale",
+        "description": "Returns the grayscaled color.",
+        "body":[
+            "color_object:grayscale(${1:weight})"
+        ]
+    },
+    "color_object":{
+        "prefix":"color_object",
+        "description": "Returns the current color with an overridden Alpha color range.",
+        "body":[
+            "color_object:alpha_modulate(${alpha})"
+        ]
+    },
+    "color_object:unpack":{
+        "prefix":"color_object:unpack",
+        "description": "Returns the r, g, b, and a values of the color. Note that these fields can be accessed by indexing r, g, b, and a.",
+        "body":[
+            "color_object:unpack()"
+        ]
+    },
+    "common.get_date":{
+        "prefix":"common.get_date",
+        "description": "Returns the formatted date.",
+        "body":[
+            "common.get_date(${1:format}, ${2:unix_time})"
+        ]
+    },
+    "common.get_unixtime":{
+        "prefix":"common.get_unixtime",
+        "description": "Returns the number of seconds that have elapsed since the unix epoch (1 January 1970 00:00:00)",
+        "body":[
+            "common.get_unixtime()"
+        ]
+    },
+    "common.get_timestamp":{
+        "prefix":"common.get_timestamp",
+        "description": "Returns high precision timestamp in milliseconds.",
+        "body":[
+            "common.get_timestamp()"
+        ]
+    },
+    "common.get_system_time":{
+        "prefix":"common.get_system_time",
+        "description": "Returns the windows time as a table containing the year, month, day, hours, minutes, and seconds values.",
+        "body":[
+            "common.get_system_time()"
+        ]
+    },
+    "common.get_product_version":{
+        "prefix":"common.get_product_version",
+        "description": "Returns the product version of the game client.",
+        "body":[
+            "common.get_product_version()"
+        ]
+    },
+    "get_game_directory":{
+        "prefix":"get_game_directory",
+        "description": "Returns the path to the game client folder.",
+        "body":[
+            "common.get_game_directory()"
+        ]
+    },
+    "get_map_data":{
+        "prefix":"get_map_data",
+        "description": "Returns a table containing the name, shortname, and group values.",
+        "body":[
+            "common.get_map_data()"
+        ]
+    },
+    "get_username":{
+        "prefix":"get_username",
+        "description": "Returns your Neverlose username.",
+        "body":[
+            "common.get_username()"
+        ]
+    },
+    "get_config_name":{
+        "prefix":"get_config_name",
+        "description": "Returns the name of the currently loaded config.",
+        "body":[
+            "common.get_config_name()"
+        ]
+    },
+    "common.is_in_thirdperson":{
+        "prefix":"common.is_in_thirdperson",
+        "description": "Returns true if the camera is in thirdperson.",
+        "body":[
+            "common.is_in_thirdperson()"
+        ]
+    },
+    "common.reload_script":{
+        "prefix":"common.reload_script",
+        "description": "Reloads current script",
+        "body":[
+            "common.reload_script()"
+        ]
+    },
+    "common.set_clan_tag":{
+        "prefix":"common.set_clan_tag",
+        "description": "Sets your in-game clan tag.",
+        "body":[
+            "common.set_clan_tag(${1:text})"
+        ]
+    },
+    "common.set_name":{
+        "prefix":"common.set_name",
+        "description": "Sets your in-game name.",
+        "body":[
+            "common.set_name(${1:text})"
+        ]
+    },
+    "add_event":{
+        "prefix":"add_event",
+        "description": "",
+        "body":[
+            "${}"
+        ]
+    },
+    "common.add_notify":{
+        "prefix":"common.add_notify",
+        "description": "Draws the notification.",
+        "body":[
+            "common.add_notify(${1:title},${2:text})"
+        ]
+    },
+    "common.is_button_down":{
+        "prefix":"common.is_button_down",
+        "description": "Returns true if the button is down, or nil on failure.",
+        "body":[
+            "common.is_button_down(${1:key})"
+        ]
+    },
+    "common.is_button_released":{
+        "prefix":"common.is_button_released",
+        "description": "Returns true if the button is released, or nil on failure.",
+        "body":[
+            "common.is_button_released(${1:key})"
+        ]
+    },
+    "cvar_object:call":{
+        "prefix":"cvar_object:call",
+        "description": "Executes a ConCommand or cvar callback, passing its arguments to it.",
+        "body":[
+            "cvar_object:call(${1:...})"
+        ]
+    },
+    "cvar_object:int":{
+        "prefix":"cvar_object:int",
+        "description": "",
+        "body":[
+            "cvar_object:int(${1:value},${2:raw})"
+        ]
+    },
+    "cvar_object:float":{
+        "prefix":"cvar_object:float",
+        "description": "Gets or sets the ConVar float value.",
+        "body":[
+            "cvar_object:float(${1:value},${2:raw})"
+        ]
+    },
+    "cvar_object:string":{
+        "prefix":"cvar_object:string",
+        "description": "Gets or sets the ConVar string value.",
+        "body":[
+            "cvar_object:string(${1:value})"
+        ]
+    },
+    "cvar_object:set_callback":{
+        "prefix":"cvar_object:set_callback",
+        "description": "Registers the callback to the specified ConVar/Command. The registered function will be called every time the specified convar value is updated.",
+        "body":[
+            "cvar_object:set_callback(${1:callback})"
+        ]
+    },
+    "cvar_object:unset_callback":{
+        "prefix":"cvar_object:unset_callback",
+        "description": "Unregisters the callback that was set via the :set_callback function from the specified ConVar/Command.",
+        "body":[
+            "cvar_object:unset_callback(${1:callback})"
+        ]
+    },
+    "entity.get":{
+        "prefix":"entity.get",
+        "description": "Returns a pointer to the specified entity.",
+        "body":[
+            "entity.get(${1:idx},${2:by_userid})"
+        ]
+    },
+    "entity.get_local_player":{
+        "prefix":"entity.get_local_player",
+        "description": "Returns a pointer to the local player.",
+        "body":[
+            "entity.get_local_player()"
+        ]
+    },
+    "entity.get_players":{
+        "prefix":"entity.get_players",
+        "description": "If the callback is nil, it returns the table of pointers to player entities. Otherwise the callback will be called. Access the player pointer using the arguments of the specified callback.",
+        "body":[
+            "entity.get_players(${1:enemies_only}, ${2:include_dormant}, ${3:callback})"
+        ]
+    },
+    "entity.get_entities":{
+        "prefix":"entity.get_entities",
+        "description": "If the callback is nil, it returns the table of pointers to entities. Otherwise the callback will be called. Access the entity pointer using the arguments of the specified callback.",
+        "body":[
+            "entity.get_entities(${1:class},${2:include_dormant},${3:callback})"
+        ]
+    },
+    "entity.get_threat":{
+        "prefix":"entity.get_threat",
+        "description": "Returns a pointer to the current threat.",
+        "body":[
+            "entity.get_threat(${1:hittable})"
+        ]
+    },
+    "entity.get_game_rules":{
+        "prefix":"entity.get_game_rules",
+        "description": "Returns the pointer to the CCSGameRulesProxy instance, or nil if none exists.",
+        "body":[
+            "entity.get_game_rules()"
+        ]
+    },
+    "ent[0]":{
+        "prefix":"ent[0]",
+        "description": "Returns the ffi pointer to the entity.",
+        "body":[
+            "ent[0]"
+        ]
+    },
+    "ent.prop_name":{
+        "prefix":"ent.prop_name",
+        "description": "ent.prop_name[index]",
+        "body":[
+            "ent.prop_name[${1:index}]"
+        ]
+    },
+    "ent[]":{
+        "prefix":"ent[]",
+        "description": "",
+        "body":[
+            "ent[${1:prop_name}]"
+        ]
+    },
+    "ent:is_player":{
+        "prefix":"ent:is_player",
+        "description": "Returns true if the entity is a player entity.",
+        "body":[
+            "ent:is_player()"
+        ]
+    },
+    "ent:is_weapon":{
+        "prefix":"ent:is_weapon",
+        "description": "Returns true if the entity is a weapon entity.",
+        "body":[
+            "ent:is_weapon()"
+        ]
+    },
+    "ent:is_dormant":{
+        "prefix":"ent:is_dormant",
+        "description": "Returns true if the entity is dormant.",
+        "body":[
+            "ent:is_dormant()"
+        ]
+    },
+    "ent:is_bot":{
+        "prefix":"ent:is_bot",
+        "description": "Returns true if the entity is a bot.",
+        "body":[
+            "ent:is_bot()"
+        ]
+    },
+    "ent:is_alive":{
+        "prefix":"ent:is_alive",
+        "description": "Returns true if the entity is alive.",
+        "body":[
+            "ent:is_alive()"
+        ]
+    },
+    "ent:is_enemy":{
+        "prefix":"ent:is_enemy",
+        "description": "Returns true if the entity is an enemy.",
+        "body":[
+            "ent:is_enemy()"
+        ]
+    },
+    "ent:is_visible":{
+        "prefix":"ent:is_visible",
+        "description": "Returns true if the entity is visible.",
+        "body":[
+            "ent:is_visible()"
+        ]
+    },
+    "ent:is_occluded":{
+        "prefix":"ent:is_occluded",
+        "description": "If the to_entity is nil, the local player is checked. Returns true if the entity is completely occluded for the current entity.",
+        "body":[
+            "ent:is_occluded(${1:to_entity})"
+        ]
+    },
+    "ent:get_index":{
+        "prefix":"ent:get_index",
+        "description": "Returns the index of the entity.",
+        "body":[
+            "ent:get_index()"
+        ]
+    },
+    "ent:get_name":{
+        "prefix":"ent:get_name",
+        "description": "Returns the player name, weapon name or class name if the entity is neither of those.",
+        "body":[
+            "ent:get_name()"
+        ]
+    },
+    "ent:get_origin":{
+        "prefix":"ent:get_origin",
+        "description": "Returns the position vector of the entity.",
+        "body":[
+            "ent:get_origin()"
+        ]
+    },
+    "ent:get_angles":{
+        "prefix":"ent:get_angles",
+        "description": "Returns the absolute angles of the entity.",
+        "body":[
+            "ent:get_angles()"
+        ]
+    },
+    "ent:get_simulation_time":{
+        "prefix":"ent:get_simulation_time",
+        "description": "Returns a table containing current and old simulation time values.",
+        "body":[
+            "ent:get_simulation_time()"
+        ]
+    },
+    "ent:get_classname":{
+        "prefix":"ent:get_classname",
+        "description": "Returns the name of the entity's class.",
+        "body":[
+            "ent:get_classname()"
+        ]
+    },
+    "ent:get_classid":{
+        "prefix":"ent:get_classid",
+        "description": "Returns the ID of the entity's class.",
+        "body":[
+            "ent:get_classid()"
+        ]
+    },
+    "ent:get_materials":{
+        "prefix":"ent:get_materials",
+        "description": "Returns a table containing all materials used by the entity.",
+        "body":[
+            "ent:get_materials()"
+        ]
+    },
+    "ent:get_network_state":{
+        "prefix":"ent:get_network_state",
+        "description": "Returns the network state of the player.",
+        "body":[
+            "ent:get_network_state()"
+        ]
+    },
+    "ent:get_bbox":{
+        "prefix":"ent:get_bbox",
+        "description": "Returns a table containing pos1, pos2, and alpha values.",
+        "body":[
+            "ent:get_bbox()"
+        ]
+    },
+    "ent:get_player_info":{
+        "prefix":"ent:get_player_info",
+        "description": "Returns a table containing information from the player_info_t structure of the entity.Table values: is_hltv, is_fake_player, steamid, steamid64, userid, and files_downloaded",
+        "body":[
+            "ent:get_player_info()"
+        ]
+    },
+    "ent:get_player_weapon":{
+        "prefix":"ent:get_player_weapon",
+        "description": "Returns a pointer to the player's weapon entity.",
+        "body":[
+            "ent:get_player_weapon(${1:all_weapons})"
+        ]
+    },
+    "ent:get_anim_state":{
+        "prefix":"ent:get_anim_state",
+        "description": "Returns a table containing information about the animation state of the player.",
+        "body":[
+            "ent:get_anim_state()"
+        ]
+    },
+    "ent:get_anim_overlay":{
+        "prefix":"ent:get_anim_overlay",
+        "description": "Returns a table containing information about the specified animation layer. Pass nil to get every animation layer.",
+        "body":[
+            "ent:get_anim_overlay(${1:idx})"
+        ]
+    },
+    "ent:get_eye_position":{
+        "prefix":"ent:get_eye_position",
+        "description": "Returns the eye position of the player.",
+        "body":[
+            "ent:get_eye_position()"
+        ]
+    },
+    "ent:get_hitbox_position":{
+        "prefix":"ent:get_hitbox_position",
+        "description": "Returns the position of the specified hitbox.",
+        "body":[
+            "ent:get_hitbox_position(${1:idx})"
+        ]
+    },
+    "ent:get_steam_avatar":{
+        "prefix":"ent:get_steam_avatar",
+        "description": "Returns a pointer to the Steam avatar image object of the specified entity.",
+        "body":[
+            "ent:get_steam_avatar()"
+        ]
+    },
+    "ent:get_xuid":{
+        "prefix":"ent:get_xuid",
+        "description": "Returns the Steam ID of the player.",
+        "body":[
+            "ent:get_xuid()"
+        ]
+    },
+    "ent:get_resource":{
+        "prefix":"ent:get_resource",
+        "description": "Returns the pointer to the CCSPlayerResource instance attached to the player, or nil if none exists.",
+        "body":[
+            "ent:get_resource()"
+        ]
+    },
+    "ent:get_spectators":{
+        "prefix":"ent:get_spectators",
+        "description": "Returns a table of pointers to the players that are currently spectating the specified player.",
+        "body":[
+            "ent:get_spectators()"
+        ]
+    },
+    "ent:set_icon":{
+        "prefix":"ent:set_icon",
+        "description": "Sets an icon in the scoreboard next to the specified player's avatar. The icon will be removed if no icon was provided.",
+        "body":[
+            "ent:set_icon(${1:string})"
+        ]
+    },
+    "ent:get_weapon_index":{
+        "prefix":"ent:get_weapon_index",
+        "description": "Returns the index of the weapon.",
+        "body":[
+            "ent:get_weapon_index()"
+        ]
+    },
+    "ent:get_weapon_icon":{
+        "prefix":"ent:get_weapon_icon",
+        "description": "Returns the icon of the weapon.",
+        "body":[
+            "ent:get_weapon_icon()"
+        ]
+    },
+    "ent:get_weapon_info":{
+        "prefix":"ent:get_weapon_info",
+        "description": "Returns a pointer to the CCSWeaponInfo struct of the weapon.",
+        "body":[
+            "ent:get_weapon_info()"
+        ]
+    },
+    "ent:get_weapon_owner":{
+        "prefix":"ent:get_weapon_owner",
+        "description": "Returns a pointer to the weapon owner's entity.",
+        "body":[
+            "ent:get_weapon_owner()"
+        ]
+    },
+    "ent:get_weapon_reload":{
+        "prefix":"ent:get_weapon_reload",
+        "description": "Returns the weapon reload percentage (0.0-1.0), -1 if not reloading. ",
+        "body":[
+            "ent:get_weapon_reload()"
+        ]
+    },
+    "ent:get_max_speed":{
+        "prefix":"ent:get_max_speed",
+        "description": "Returns the maximum speed the player can move with the weapon.",
+        "body":[
+            "ent:get_max_speed()"
+        ]
+    },
+    "ent:get_spread":{
+        "prefix":"ent:get_spread",
+        "description": "Returns the spread of the weapon in radians.",
+        "body":[
+            "ent:get_spread()"
+        ]
+    },
+    "ent:get_inaccuracy":{
+        "prefix":"ent:get_inaccuracy",
+        "description": "Returns the inaccuracy of the weapon in radians.",
+        "body":[
+            "ent:get_inaccuracy()"
+        ]
+    },
+    "esp.esp_class:new_text":{
+        "prefix":"esp.esp_class:new_text",
+        "description": "Registers ESP text to the specified class. The callback function is called every frame. It is passed an entity pointer. Return a string in order to manage the output.",
+        "body":[
+            "esp.esp_class:new_text(${1:name},${2:preview},${3:callback}"
+        ]
+    },
+    "esp.esp_class:new_bar":{
+        "prefix":"esp.esp_class:new_bar",
+        "description": "Registers an ESP bar to the specified class. The callback function is called every frame. Access the entity pointer using the arguments of the specified callback. Return a boolean followed by the number in the range [0.0, 1.0].",
+        "body":[
+            "esp.esp_class:new_bar(${1:name},${2:callback})"
+        ]
+    },
+    "esp.esp_class:new_item":{
+        "prefix":"esp.esp_class:new_item",
+        "description": "Registers an ESP item that is neither text nor a bar.",
+        "body":[
+            "esp.esp_class:new_item(${1:name})"
+        ]
+    },
+    "events.event_name:set":{
+        "prefix":"events.event_name:set",
+        "description": "Registers the callback to the specified event. The registered function will be called every time the specified event occurs.",
+        "body":[
+            "events.event_name:set(${1:callback})"
+        ]
+    },
+    "events.event_name:unset":{
+        "prefix":"events.event_name:unset",
+        "description": "Unregisters the callback that was set via the :set function from the specified event.",
+        "body":[
+            "events.event_name:unset()${1:callback}"
+        ]
+    },
+    "events.event_name:call":{
+        "prefix":"events.event_name:call",
+        "description": "Fires the specified event.",
+        "body":[
+            "events.event_name:call(${1:...})"
+        ]
+    },
+    "files.create_folder":{
+        "prefix":"files.create_folder",
+        "description": "files.create_folder",
+        "body":[
+            "files.create_folder(${1:path})"
+        ]
+    },
+    "files.read":{
+        "prefix":"files.read",
+        "description": "Returns contents of the specified file.",
+        "body":[
+            "files.read(${1:path})"
+        ]
+    },
+    "files.write":{
+        "prefix":"files.write",
+        "description": "Replaces contents of the specified file. Returns false on failure.",
+        "body":[
+            "files.write(${1:path}, ${2:contents}, ${3:is_binary})"
+        ]
+    },
+    "files.get_crc32":{
+        "prefix":"files.get_crc32",
+        "description": "Returns the crc32 checksum of the file.",
+        "body":[
+            "files.get_crc32(${1:path})"
+        ]
+    },
+    "globals.curtime":{
+        "prefix":"globals.curtime",
+        "description": "Server time in seconds.",
+        "body":[
+            "globals.curtime"
+        ]
+    },
+    "globals.realtime":{
+        "prefix":"globals.realtime",
+        "description": "Local time in seconds.",
+        "body":[
+            "globals.realtime"
+        ]
+    },
+    "globals.frametime":{
+        "prefix":"globals.frametime",
+        "description": "Duration of the last game frame in seconds.",
+        "body":[
+            "globals.frametime"
+        ]
+    },
+    "globals.framecount":{
+        "prefix":"globals.framecount",
+        "description": "Amount of frames since the game started.",
+        "body":[
+            "globals.framecount"
+        ]
+    },
+    "globals.absoluteframetime":{
+        "prefix":"globals.absoluteframetime",
+        "description": "Duration of the last game frame in seconds.",
+        "body":[
+            "${}"
+        ]
+    },
+    "globals.tickcount":{
+        "prefix":"globals.tickcount",
+        "description": "Number of ticks elapsed on the server.",
+        "body":[
+            "globals.tickcount"
+        ]
+    },
+    "globals.tickinterval":{
+        "prefix":"globals.tickinterval",
+        "description": "Duration of a tick in seconds.",
+        "body":[
+            "globals.tickinterval"
+        ]
+    },
+    "globals.max_players":{
+        "prefix":"globals.max_players",
+        "description": "Maximum number of players on the server.",
+        "body":[
+            "globals.max_players"
+        ]
+    },
+    "globals.is_connected":{
+        "prefix":"globals.is_connected",
+        "description": "Returns true if the player is connected, but not necessarily active in game (could still be loading).",
+        "body":[
+            "globals.is_connected"
+        ]
+    },
+    "globals.is_in_game":{
+        "prefix":"globals.is_in_game",
+        "description": "Returns true if the player is currently connected to a game server.",
+        "body":[
+            "globals.is_in_game"
+        ]
+    },
+    "globals.choked_commands":{
+        "prefix":"globals.choked_commands",
+        "description": "Number of choked commands.",
+        "body":[
+            "globals.choked_commands"
+        ]
+    },
+    "globals.commandack":{
+        "prefix":"globals.commandack",
+        "description": "Current command number acknowledged by server.",
+        "body":[
+            "globals.commandack"
+        ]
+    },
+    "globals.commandack_prev":{
+        "prefix":"globals.commandack_prev",
+        "description": "Sequence number of last outgoing command.",
+        "body":[
+            "globals.commandack_prev"
+        ]
+    },
+    "globals.last_outgoing_command":{
+        "prefix":"globals.last_outgoing_command",
+        "description": "Number of last command sequence number acknowledged by server.",
+        "body":[
+            "globals.last_outgoing_command"
+        ]
+    },
+    "globals.server_tick":{
+        "prefix":"globals.server_tick",
+        "description": "Last-received tick from the server.",
+        "body":[
+            "globals.server_tick"
+        ]
+    },
+    "globals.client_tick":{
+        "prefix":"globals.client_tick",
+        "description": "The client's own tick count.",
+        "body":[
+            "globals.client_tick"
+        ]
+    },
+    "globals.delta_tick":{
+        "prefix":"globals.delta_tick",
+        "description": "Last-valid received snapshot (server) tick.",
+        "body":[
+            "globals.delta_tick"
+        ]
+    },
+    "globals.clock_offset":{
+        "prefix":"globals.clock_offset",
+        "description": "Difference between the server and client tick counts, used to predict the current server tick count.",
+        "body":[
+            "globals.clock_offset"
+        ]
+    },
+    "json.parse":{
+        "prefix":"json.parse",
+        "description": "Will deserialize any UTF-8 JSON string into a Lua value or table.",
+        "body":[
+            "json.parse(${1:json_text})"
+        ]
+    },
+    "json.stringify":{
+        "prefix":"json.stringify",
+        "description": "Will serialize a Lua value into a string containing the JSON representation.",
+        "body":[
+            "json.stringify(${1:value})"
+        ]
+    },
+    "materials.get":{
+        "prefix":"materials.get",
+        "description": "Returns the material object in the specified path.",
+        "body":[
+            "materials.get(${1:path},${2:force_load})"
+        ]
+    },
+    "materials.get_materials":{
+        "prefix":"materials.get_materials",
+        "description": "If the callback is nil, it returns the table of material objects along the specified path. Otherwise the callback will be called. Access the material object using the arguments of the specified callback.",
+        "body":[
+            "materials.get_materials(${1:partial_path},${2:force_load}:${3:callback})"
+        ]
+    },
+    "materials.create":{
+        "prefix":"materials.create",
+        "description": "Creates and returns a new material object",
+        "body":[
+            "materials.create(${1:name}, ${2:key_values})"
+        ]
+    },
+    "material:get_name":{
+        "prefix":"material:get_name",
+        "description": "Returns the name of the material.",
+        "body":[
+            "material:get_name()"
+        ]
+    },
+    "material:get_texture_group_name":{
+        "prefix":"material:get_texture_group_name",
+        "description": "Returns the texture group name of the material.",
+        "body":[
+            "material:get_texture_group_name()"
+        ]
+    },
+    "material:var_flag":{
+        "prefix":"material:var_flag",
+        "description": "Gets or sets the value of the material var flag.",
+        "body":[
+            "material:var_flag(${1:flag},${2:value})"
+        ]
+    },
+    "material:shader_param":{
+        "prefix":"material:shader_param",
+        "description": "Gets or sets the value of the material shader parameter.",
+        "body":[
+            "material:shader_param(${1:name},${2:value})"
+        ]
+    },
+    "material:color_modulate":{
+        "prefix":"material:color_modulate",
+        "description": "Gets or sets the material color modulation value.",
+        "body":[
+            "material:color_modulate(${1:color})"
+        ]
+    },
+    "material:alpha_modulate":{
+        "prefix":"material:alpha_modulate",
+        "description": "Gets or sets the material alpha modulation value.",
+        "body":[
+            "material:alpha_modulate(${1:alpha})"
+        ]
+    },
+    "material:is_valid":{
+        "prefix":"material:is_valid",
+        "description": "Returns true if the material is valid",
+        "body":[
+            "material:is_valid()"
+        ]
+    },
+    "material:reset":{
+        "prefix":"material:reset",
+        "description": "Resets the material properties to its original values along with discarding the override.",
+        "body":[
+            "material:reset()"
+        ]
+    },
+    "material:override":{
+        "prefix":"material:override",
+        "description": "Overrides material properties to properties from another material without setting them.",
+        "body":[
+            "material:override(${1:mat})"
+        ]
+    },
+    "math.clamp":{
+        "prefix":"math.clamp",
+        "description": "Returns the clamped value.",
+        "body":[
+            "math.clamp(${1:value},${2:min} , ${3:max})"
+        ]
+    },
+    "math.map":{
+        "prefix":"math.map",
+        "description": "Linearly maps two number ranges and returns the mapped value.",
+        "body":[
+            "math.map(${1:value},${2:in_from},${3:in_to},${4:out_from},${5:out_to},${6:should_clamp})"
+        ]
+    },
+    "math.normalize_yaw":{
+        "prefix":"math.normalize_yaw",
+        "description": "Returns the normalized yaw angle value.",
+        "body":[
+            "math.normalize_yaw(${1:x})"
+        ]
+    },
+    "network.get":{
+        "prefix":"network.get",
+        "description": "Sends a GET request to the URL.",
+        "body":[
+            "network.get(${1:url}, ${2:headers}, ${3:callback})"
+        ]
+    },
+    "network.post":{
+        "prefix":"network.post",
+        "description": "Sends a POST request to the URL.",
+        "body":[
+            "network.post(${1:url}, ${2:data}, ${3:headers}, ${4:callback})"
+        ]
+    },
+    "panorama.loadstring":{
+        "prefix":"panorama.loadstring",
+        "description": "panorama.loadstring",
+        "body":[
+            "panorama.loadstring(${1:js_code},${2:panel})"
+        ]
+    },
+    "panorama":{
+        "prefix":"panorama",
+        "description": "panorama[panel][api]",
+        "body":[
+            "panorama[panel][api]"
+        ]
+    },
+    "rage.antiaim":{
+        "prefix":"rage.antiaim",
+        "description": "Returns the maximum amount of desync.",
+        "body":[
+            "rage.antiaim:get_max_desync()"
+        ]
+    },
+    "rage.antiaim":{
+        "prefix":"rage.antiaim",
+        "description": "Returns the current anti-aim rotation.",
+        "body":[
+            "rage.antiaim:get_rotation(${1:value})"
+        ]
+    },
+    "rage.antiaim:get_target":{
+        "prefix":"rage.antiaim:get_target",
+        "description": "Returns the at target yaw rotation or nil if not available.",
+        "body":[
+            "rage.antiaim:get_target(${1:return_fr})"
+        ]
+    },
+    "rage.exploit:get":{
+        "prefix":"rage.exploit:get",
+        "description": "Returns the exploit charge as a unit interval (value in the range [0, 1]).",
+        "body":[
+            "rage.exploit:get()"
+        ]
+    },
+    "rage.exploit:allow_defensive":{
+        "prefix":"rage.exploit:allow_defensive",
+        "description": "Allows/blocks defensive exploit discharge.",
+        "body":[
+            "rage.exploit:allow_defensive(${1:value})"
+        ]
+    },
+    "rage.exploit:force_teleport":{
+        "prefix":"rage.exploit:force_teleport",
+        "description": "",
+        "body":[
+            "rage.exploit:force_teleport()"
+        ]
+    },
+    "rage.exploit:force_charge":{
+        "prefix":"rage.exploit:force_charge",
+        "description": "",
+        "body":[
+            "rage.exploit:force_charge())"
+        ]
+    },
+    "vec_object:angles":{
+        "prefix":"vec_object:angles",
+        "description": "Converts the angle into a forward vector overwriting the vector's coordinates. Returns itself.",
+        "body":[
+            "vec_object:angles(${1:pitch},${2:yaw})"
+        ]
+    },
+    "vec_object:ceil":{
+        "prefix":"vec_object:ceil",
+        "description": "Ceils & overwrites the x, y, and z coordinates of a vector. Returns itself.",
+        "body":[
+            "vec_object:ceil()"
+        ]
+    },
+    "vec_object":{
+        "prefix":"vec_object",
+        "description": "Creates and returns a copy of the vector.",
+        "body":[
+            "vec_object:clone()"
+        ]
+    },
+    "vec_object:closest_ray_point":{
+        "prefix":"vec_object:closest_ray_point",
+        "description": "",
+        "body":[
+            "vec_object:closest_ray_point(${1:ray_start},${2:ray_end})"
+        ]
+    },
+    "vec_object:cross":{
+        "prefix":"vec_object:cross",
+        "description": "Returns the cross product of two given vectors.",
+        "body":[
+            "vec_object:cross(${1:other})"
+        ]
+    },
+    "vec_object:dist":{
+        "prefix":"vec_object:dist",
+        "description": "Returns the Euclidean distance between the two given vectors.",
+        "body":[
+            "vec_object:dist(${1:other})"
+        ]
+    },
+    "vec_object:dist2d":{
+        "prefix":"vec_object:dist2d",
+        "description": "Returns the 2D distance to another vector.",
+        "body":[
+            "vec_object:dist2d(${1:other})"
+        ]
+    },
+    "vec_object:dist2dsqr":{
+        "prefix":"vec_object:dist2dsqr",
+        "description": "Returns the squared 2D distance to another vector.",
+        "body":[
+            "vec_object:dist2dsqr(${1:other})"
+        ]
+    },
+    "vec_object:distsqr":{
+        "prefix":"vec_object:distsqr",
+        "description": "Returns the squared Euclidean distance to another vector.",
+        "body":[
+            "vec_object:distsqr(${1:other})"
+        ]
+    },
+    "vec_object:dist_to_ray":{
+        "prefix":"vec_object:dist_to_ray",
+        "description": "Returns the distance to a ray.",
+        "body":[
+            "vec_object:dist_to_ray(ray_start: vector, ray_direction: vector)"
+        ]
+    },
+    "vec_object:dot":{
+        "prefix":"vec_object:dot",
+        "description": "Returns the dot product of the two given vectors.",
+        "body":[
+            "vec_object:dot(other: vector)"
+        ]
+    },
+    "vec_object:floor":{
+        "prefix":"vec_object:floor",
+        "description": "Rounds the x, y, and z coordinates of the vector down to the largest integer that is less than or equal. Returns itself.",
+        "body":[
+            "vec_object:floor()"
+        ]
+    },
+    "vec_object:in_range":{
+        "prefix":"vec_object:in_range",
+        "description": "Returns true if the vector is within the given distance to another vector.",
+        "body":[
+            "vec_object:in_range(other: vector, range: number)"
+        ]
+    },
+    "vec_object:init":{
+        "prefix":"vec_object:init",
+        "description": "Overwrites the vector's coordinates. Returns itself.",
+        "body":[
+            "vec_object:init(x: number, y: number, z: number)"
+        ]
+    },
+    "vec_object:length":{
+        "prefix":"vec_object:length",
+        "description": "Returns the Euclidean length of the vector.",
+        "body":[
+            "vec_object:length()"
+        ]
+    },
+    "vec_object:length2d":{
+        "prefix":"vec_object:length2d",
+        "description": "Returns the length of the vector in two dimensions, without the Z axis.",
+        "body":[
+            "vec_object:length2d()"
+        ]
+    },
+    "vec_object:length2dsqr":{
+        "prefix":"vec_object:length2dsqr",
+        "description": "Returns the squared length of the vectors x and y value.",
+        "body":[
+            "vec_object:length2dsqr()"
+        ]
+    },
+    "vec_object:lengthsqr":{
+        "prefix":"vec_object:lengthsqr",
+        "description": "Returns the squared length of the vector.",
+        "body":[
+            "vec_object:lengthsqr()"
+        ]
+    },
+    "vec_object:lerp":{
+        "prefix":"vec_object:lerp",
+        "description": "Returns the linearly interpolated vector between two vectors by the specified weight.",
+        "body":[
+            "vec_object:lerp(other: vector, weight: number)"
+        ]
+    },
+    "vec_object:normalize":{
+        "prefix":"vec_object:normalize",
+        "description": "Normalizes the vector and returns the length of the vector.",
+        "body":[
+            "vec_object:normalize()"
+        ]
+    },
+    "vec_object:scale":{
+        "prefix":"",
+        "description": "Multiplies the vector by the specified scalar.",
+        "body":[
+            "vec_object:scale(scalar: number)"
+        ]
+    },
+    "vec_object:scaled":{
+        "prefix":"vec_object:scaled",
+        "description": "Returns a copy of the vector multiplied by the specified scalar.",
+        "body":[
+            "vec_object:scaled(scalar: number)"
+        ]
+    },
+    "vec_object:to":{
+        "prefix":"vec_object:to",
+        "description": "Returns the forward vector from itself to another vector.",
+        "body":[
+            "vec_object:to(other: vector)"
+        ]
+    },
+    "vec_object:to_screen":{
+        "prefix":"vec_object:to_screen",
+        "description": "Returns a vector containing the coordinates where the specified position vector appears on the screen.",
+        "body":[
+            "vec_object:to_screen()"
+        ]
+    },
+    "vec_object:unpack":{
+        "prefix":"vec_object:unpack",
+        "description": "Returns the x, y, and z coordinates of the vector. Note that these fields can be accessed by indexing x, y, and z.",
+        "body":[
+            "vec_object:unpack()"
+        ]
+    },
+    "vec_object:vectors":{
+        "prefix":"vec_object:vectors",
+        "description": "Returns the right and up vector of a forward vector.",
+        "body":[
+            "vec_object:vectors()"
+        ]
+    },
+    "ui.get_alpha":{
+        "prefix":"ui.get_alpha",
+        "description": "Returns the menu opacity as a unit interval (value in the range [0, 1]).",
+        "body":[
+            "ui.get_alpha()"
+        ]
+    },
+    "ui.get_size":{
+        "prefix":"ui.get_size",
+        "description": "Returns the current menu size.",
+        "body":[
+            "ui.get_size()"
+        ]
+    },
+    "ui.get_position":{
+        "prefix":"ui.get_position",
+        "description": "Returns the current menu position.",
+        "body":[
+            "ui.get_position()"
+        ]
+    },
+    "ui.get_mouse_position":{
+        "prefix":"ui.get_mouse_position",
+        "description": "Returns the current mouse position.",
+        "body":[
+            "ui.get_mouse_position()"
+        ]
+    },
+    "ui.get_binds":{
+        "prefix":"ui.get_binds",
+        "description": "Returns a table of pointers to hotkeys.",
+        "body":[
+            "ui.get_binds()"
+        ]
+    },
+    "ui.get_style":{
+        "prefix":"ui.get_style",
+        "description": "Returns the color of the Style Option. Pass nil to return a table with the style options.",
+        "body":[
+            "ui.get_style(${1:name})"
+        ]
+    },
+    "ui.get_icon":{
+        "prefix":"ui.get_icon",
+        "description": "Returns the unicode converted string corresponding the fontawesome icon.",
+        "body":[
+            "ui.get_icon(name: string)"
+        ]
+    },
+    "ui.create":{
+        "prefix":"ui.create",
+        "description": "Creates and returns a menu group object.",
+        "body":[
+            "ui.create(group: string)"
+        ]
+    },
+    "ui.find":{
+        "prefix":"ui.find",
+        "description": "Returns the MenuItem object that corresponds to the specified path.",
+        "body":[
+            "ui.find(category: string, tab: string, group: string, item: string)"
+        ]
+    },
+    "ui.sidebar":{
+        "prefix":"ui.sidebar",
+        "description": "Gets or sets the sidebar tab name and an icon.",
+        "body":[
+            "ui.sidebar([name: string, icon_name: string])"
+        ]
+    },
+    "group:switch":{
+        "prefix":"group:switch",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:switch(name: string[, init: boolean])"
+        ]
+    },
+    "group:slider":{
+        "prefix":"group:slider",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:slider(name: string, min: number, max: number[, init: number, scale: number, tooltip: function])"
+        ]
+    },
+    "group:combo":{
+        "prefix":"group:combo",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:combo(name: string, items: any[, ...])"
+        ]
+    },
+    "group:selectable":{
+        "prefix":"group:selectable",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:selectable(name: string, items: any[, ...])"
+        ]
+    },
+    "group:color_picker":{
+        "prefix":"group:color_picker",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:color_picker(name: string[, color: color])"
+        ]
+    },
+    "group:button":{
+        "prefix":"group:button",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:button(name: string[, callback: function, alt_style: boolean])"
+        ]
+    },
+    "group:hotkey":{
+        "prefix":"group:hotkey",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:hotkey(name: string[, default_key: number)"
+        ]
+    },
+    "group:input":{
+        "prefix":"group:input",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:input(name: string[, text: string])"
+        ]
+    },
+    "group:list":{
+        "prefix":"group:list",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:list(name: string, items: any[, ...])"
+        ]
+    },
+    "group:listable":{
+        "prefix":"group:listable",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:listable(name: string, items: any[, ...])"
+        ]
+    },
+    "group:label":{
+        "prefix":"group:label",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:label(text: string)"
+        ]
+    },
+    "group:texture":{
+        "prefix":"group:texture",
+        "description": "Creates and returns a menu item object, or throws an error on failure.",
+        "body":[
+            "group:texture(texture: ImgObject[, size: vector, color: color, mode: string, rounding: number])"
+        ]
+    },
+    "item:get":{
+        "prefix":"item:get",
+        "description": "Returns the value of the menu item.",
+        "body":[
+            "item:get()"
+        ]
+    },
+    "item:get_id":{
+        "prefix":"item:get_id",
+        "description": "Returns the unique id of the menu item.",
+        "body":[
+            "item:get_id()"
+        ]
+    },
+    "item:get_list":{
+        "prefix":"item:get_list",
+        "description": "Returns the list of items. combo / selectable menu item objects only.",
+        "body":[
+            "item:get_list()"
+        ]
+    },
+    "item:get_type":{
+        "prefix":"item:get_type",
+        "description": "Returns the type of the menu item.",
+        "body":[
+            "item:get_type()"
+        ]
+    },
+    "item:get_name":{
+        "prefix":"item:get_name",
+        "description": "Returns the name of the menu item.",
+        "body":[
+            "item:get_name()"
+        ]
+    },
+    "item:get_tooltip":{
+        "prefix":"item:get_tooltip",
+        "description": "Returns the tooltip that is shown whenever the menu item is hovered over.",
+        "body":[
+            "item:get_tooltip()"
+        ]
+    },
+    "item:get_visible":{
+        "prefix":"item:get_visible",
+        "description": "Returns the visibility state of the menu item.",
+        "body":[
+            "item:get_visible()"
+        ]
+    },
+    "item:override":{
+        "prefix":"item:override",
+        "description": "Overrides the item value without changing the menu / config values. If the value argument is nil or missing, the override is undone.",
+        "body":[
+            "item:override(value: any[, ...])"
+        ]
+    },
+    "item:get_override":{
+        "prefix":"item:get_override",
+        "description": "Returns the value of the menu item it's overriden to.",
+        "body":[
+            "item:get_override()"
+        ]
+    },
+    "item:update":{
+        "prefix":"item:update",
+        "description": "Updates the values of the menu item.",
+        "body":[
+            "item:update(...)"
+        ]
+    },
+    "item:reset":{
+        "prefix":"item:reset",
+        "description": "Resets the menu item to it's original value.",
+        "body":[
+            "item:reset()"
+        ]
+    },
+    "item:set":{
+        "prefix":"item:set",
+        "description": "Sets the value of the menu item.",
+        "body":[
+            "item:set(value: any[, ...])"
+        ]
+    },
+    "item:set_name":{
+        "prefix":"item:set_name",
+        "description": "Renames the menu item.",
+        "body":[
+            "item:set_name(value: any)"
+        ]
+    },
+    "item:set_tooltip":{
+        "prefix":"item:set_tooltip",
+        "description": "Sets the tooltip of the menu item.",
+        "body":[
+            "item:set_tooltip(value: any)"
+        ]
+    },
+    "item:set_visible":{
+        "prefix":"item:set_visible",
+        "description": "Shows or hides the menu item depending on the value of state.",
+        "body":[
+            "item:set_visible(state: boolean)"
+        ]
+    },
+    "item:set_callback":{
+        "prefix":"item:set_callback",
+        "description": "Sets the callback to the specified menu item.",
+        "body":[
+            "item:set_callback(callback: function[, force_call: boolean])"
+        ]
+    },
+    "item:unset_callback":{
+        "prefix":"item:unset_callback",
+        "description": "Unsets the callback that was set via the :set_callback function.",
+        "body":[
+            "item:unset_callback(callback: function)"
+        ]
+    },
+    "item:color_picker":{
+        "prefix":"item:color_picker",
+        "description": "Attaches a color picker to the current menu item object.",
+        "body":[
+            "item:color_picker([ color: color ])"
+        ]
+    },
+    "item:create":{
+        "prefix":"item:create",
+        "description": "Attaches a group (gear) to the current menu item object.",
+        "body":[
+            "item:create()"
+        ]
+    },
+    "item:parent":{
+        "prefix":"item:parent",
+        "description": "Returns the parent object of the menu item.",
+        "body":[
+            "item:parent()"
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    },
+    "":{
+        "prefix":"",
+        "description": "",
+        "body":[
+            ""
+        ]
+    }
+}
