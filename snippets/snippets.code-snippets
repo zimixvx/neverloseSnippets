@@ -1035,15 +1035,15 @@
             "panorama[panel][api]"
         ]
     },
-    "rage.antiaim":{
-        "prefix":"rage.antiaim",
+    "rage.antiaim:get_max_desync":{
+        "prefix":"rage.antiaim:get_max_desync",
         "description": "Returns the maximum amount of desync.",
         "body":[
             "rage.antiaim:get_max_desync()"
         ]
     },
-    "rage.antiaim":{
-        "prefix":"rage.antiaim",
+    "rage.antiaim:get_rotation":{
+        "prefix":"rage.antiaim:get_rotation",
         "description": "Returns the current anti-aim rotation.",
         "body":[
             "rage.antiaim:get_rotation(${1:value})"
