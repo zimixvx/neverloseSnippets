@@ -1790,5 +1790,299 @@
         "body":[
             "net:get_packet_response_latency(${1:flow}, ${2:frame})"
         ]
+    },
+    "render.screen_size":{
+        "prefix":"render.screen_size",
+        "description": "render.screen_size",
+        "body":[
+            "render.screen_size()"
+        ]
+    },
+    "render.camera_position":{
+        "prefix":"render.camera_position",
+        "description": "Returns the camera position vector.",
+        "body":[
+            "render.camera_position()"
+        ]
+    },
+    "render.camera_angles":{
+        "prefix":"render.camera_angles",
+        "description": "Returns or sets the camera angles.",
+        "body":[
+            "render.camera_angles(${1:angles})"
+        ]
+    },
+    "render.world_to_screen":{
+        "prefix":"render.world_to_screen",
+        "description": "Returns the screen position vector, or nil if the world position is not visible on your screen. This can only be called from the render callback.",
+        "body":[
+            "render.world_to_screen(${1:position})"
+        ]
+    },
+    "render.get_offscreen":{
+        "prefix":"render.get_offscreen",
+        "description": "Returns the position, rotation, and is_out_of_fov arguments or nil on failure.",
+        "body":[
+            "render.get_offscreen(${1:position}, ${2:radius}, ${2:accurate})"
+        ]
+    },
+    "render.get_pixel":{
+        "prefix":"render.get_pixel",
+        "description": "Returns the color of the specified pixel on the screen.",
+        "body":[
+            "render.get_pixel(${1:position})"
+        ]
+    },
+    "render.load_font":{
+        "prefix":"render.load_font",
+        "description": "Returns the FontObject struct or nil on failure.",
+        "body":[
+            "render.load_font(${1:name}, ${2:size}, ${3:flags})"
+        ]
+    },
+    "render.load_image":{
+        "prefix":"render.load_image",
+        "description": "Returns the ImgObject struct or nil on failure. Supports JPG, PNG, BMP, SVG, and GIF formats.",
+        "body":[
+            "render.load_image(${1:contents},${2:size})"
+        ]
+    },
+    "render.load_image_rgba":{
+        "prefix":"render.load_image_rgba",
+        "description": "Returns the ImgObject struct or nil on failure.",
+        "body":[
+            "render.load_image_rgba(${1:contents},${2:size})"
+        ]
+    },
+    "render.load_image_from_file":{
+        "prefix":"render.load_image_from_file",
+        "description": "Returns the ImgObject struct or nil on failure. Supports JPG, PNG, BMP, SVG, and GIF formats.",
+        "body":[
+            "render.load_image_from_file(${1:path},${2:size})"
+        ]
+    },
+    "render.measure_text":{
+        "prefix":"render.measure_text",
+        "description": "Returns the measured size of the text.",
+        "body":[
+            "render.measure_text(${1:font},${2:flags},${3:text})"
+        ]
+    },
+    "render.anti_aliasing":{
+        "prefix":"render.anti_aliasing",
+        "description": "Disables or enables anti-aliasing for the current frame.",
+        "body":[
+            "render.anti_aliasing(${1:value})"
+        ]
+    },
+    "render.highlight_hitbox":{
+        "prefix":"render.highlight_hitbox",
+        "description": "Highlights the specified hitbox / hitboxes.",
+        "body":[
+            "render.highlight_hitbox(${1:entity}:,${2:hitbox}, ${3:color})"
+        ]
+    },
+    "render.get_scale":{
+        "prefix":"render.get_scale",
+        "description": "Returns the DPI scale value.",
+        "body":[
+            "render.get_scale(${type})"
+        ]
+    },
+    "img.width":{
+        "prefix":"img.width",
+        "description": "img.width",
+        "body":[
+            "img.width"
+        ]
+    },
+    "img.height":{
+        "prefix":"img.height",
+        "description": "img.height",
+        "body":[
+            "img.height"
+        ]
+    },
+    "img.resolution":{
+        "prefix":"img.resolution",
+        "description": "img.resolution",
+        "body":[
+            "img.resolution"
+        ]
+    },
+    "font.width":{
+        "prefix":"font.width",
+        "description": "font.width",
+        "body":[
+            "font.width"
+        ]
+    },
+    "font.height":{
+        "prefix":"font.height",
+        "description": "font.height",
+        "body":[
+            "font.height"
+        ]
+    },
+    "font.spacing":{
+        "prefix":"font.spacing",
+        "description": "font.spacing",
+        "body":[
+            "font.spacing"
+        ]
+    },
+    "font:set_size":{
+        "prefix":"font:set_size",
+        "description": "Sets the new font size.",
+        "body":[
+            "font:set_size(${1:size})"
+        ]
+    },
+    "render.blur":{
+        "prefix":"render.blur",
+        "description": "render.blur",
+        "body":[
+            "render.blur(${1:position_a}, ${2:position_b},${3:strength},${3:alpha}, ${4:rounding})"
+        ]
+    },
+    "render.line":{
+        "prefix":"render.line",
+        "description": "render.line",
+        "body":[
+            "render.line(${1:position_a}, ${2:position_b}, ${3:color})"
+        ]
+    },
+    "render.poly":{
+        "prefix":"render.poly",
+        "description": "render.poly",
+        "body":[
+            "render.poly(${1:color}, ${2:positions},${3...})"
+        ]
+    },
+    "render.poly_blur":{
+        "prefix":"render.poly_blur",
+        "description": "render.poly_blur",
+        "body":[
+            "render.poly_blur(${1:opacity},${2:strength},${3:positions},${4:vector})"
+        ]
+    },
+    "render.poly_line":{
+        "prefix":"render.poly_line",
+        "description": "render.poly_line",
+        "body":[
+            "render.poly_line(${1:color}, ${2:positions},${3:...} )"
+        ]
+    },
+    "render.rect":{
+        "prefix":"render.rect",
+        "description": "render.rect",
+        "body":[
+            "render.rect(${1:position_a}, ${2:position_b}, ${3:color},${4:rounding},${5:no_clamp})"
+        ]
+    },
+    "render.rect_outline":{
+        "prefix":"render.rect_outline",
+        "description": "render.rect_outline",
+        "body":[
+            "render.rect_outline(${1:position_a}, ${2:position_b}, ${3:color}, ${4:thickness}, ${5:rounding}, ${6:no_clamp})"
+        ]
+    },
+    "render.gradient":{
+        "prefix":"render.gradient",
+        "description": "render.gradient",
+        "body":[
+            "render.gradient(${1:position_a}, ${2:position_b}, ${3:top_left_color}, ${4:top_right_color}, ${5:bottom_left_color}, ${6:bottom_right_color},${7:rounding})"
+        ]
+    },
+    "render.circle":{
+        "prefix":"render.circle",
+        "description": "render.circle",
+        "body":[
+            "render.circle(${1:position}, ${2:color}, ${3:radius}, ${4:start_deg},${5:pct})"
+        ]
+    },
+    "render.circle_outline":{
+        "prefix":"render.circle_outline",
+        "description": "render.circle_outline",
+        "body":[
+            "render.circle_outline(${1:position}, ${2:color}, ${3:radius}, ${4:start_deg},${5:pct},${5:thickness})"
+        ]
+    },
+    "render.circle_gradient":{
+        "prefix":"render.circle_gradient",
+        "description": "render.circle_gradient",
+        "body":[
+            "render.circle_gradient(${1:position}, ${2:color_outer}, ${3:color_inner}, ${2:color}, ${3:radius}, ${4:start_deg})"
+        ]
+    },
+    "render.circle_3d":{
+        "prefix":"render.circle_3d",
+        "description": "render.circle_3d",
+        "body":[
+            "render.circle_3d(${1:position}, ${2:color}, ${3:radius}, ${4:start_deg},${5:pct},${6:outline})"
+        ]
+    },
+    "render.circle_3d_outline":{
+        "prefix":"render.circle_3d_outline",
+        "description": "render.circle_3d_outline",
+        "body":[
+            "render.circle_3d_outline(${1:position}, ${2:color}, ${3:radius},${4:start_deg},${5:pct},${6:thickness})"
+        ]
+    },
+    "render.circle_3d_gradient":{
+        "prefix":"render.circle_3d_gradient",
+        "description": "render.circle_3d_gradient",
+        "body":[
+            "render.circle_3d_gradient(${1:position}, ${2:color_outer}, ${3:color_inner},${4:radius},${5:start_deg}, ${6:pct})"
+        ]
+    },
+    "render.text":{
+        "prefix":"render.text",
+        "description": "render.text",
+        "body":[
+            "render.text(${1:font},${2:position},${3:color},${4:flags},${5:text},${6:...})"
+        ]
+    },
+    "render.texture":{
+        "prefix":"render.texture",
+        "description": "render.texture",
+        "body":[
+            "render.texture(${1:texture}, ${2:position}, ${3:size}, ${4:color}, ${5:mode}, ${6:rounding})"
+        ]
+    },
+    "render.push_rotation":{
+        "prefix":"render.push_rotation",
+        "description": "Applies the rotation for all subsequent elements.",
+        "body":[
+            "render.push_rotation(${1:degrees})"
+        ]
+    },
+    "render.pop_rotation":{
+        "prefix":"render.pop_rotation",
+        "description": "Discards an early set rotation.",
+        "body":[
+            "render.pop_rotation()"
+        ]
+    },
+    "render.push_clip_rect":{
+        "prefix":"render.push_clip_rect",
+        "description": "Applies the clip region to the given rectangle for all subsequent elements.",
+        "body":[
+            "render.push_clip_rect(${1:pos_a},${2:pos_b}, ${3:intersect})"
+        ]
+    },
+    "render.pop_clip_rect":{
+        "prefix":"render.pop_clip_rect",
+        "description": "Discards an early set rectangle clipping region.",
+        "body":[
+            "render.pop_clip_rect()"
+        ]
+    },
+    "render.shadow":{
+        "prefix":"render.shadow",
+        "description": "Draws a shadow rectangle.",
+        "body":[
+            "render.shadow(${1:pos_a},${2:pos_b},${3:clr}, ${4:thickness},${5:offset},${6:rounding})"
+        ]
     }
 }
